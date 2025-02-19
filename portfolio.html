@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Webpage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            padding: 20px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #2a5298;
+            animation: pop-in 1s ease;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .profile-info h1 {
+            font-size: 2rem;
+            color: #2a5298;
+            animation: fade-in 1s ease;
+        }
+
+        .profile-info h2 {
+            font-size: 1.2rem;
+            color: #555;
+            animation: fade-in 1.5s ease;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            color: white;
+            background: #2a5298;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background: #1e3c72;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+        .social-buttons {
+            margin-top: 30px;
+        }
+
+        .social-button {
+            margin: 0 15px;
+            font-size: 2rem;
+            color: white;
+            background: #2a5298;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-button:hover {
+            background: #1e3c72;
+            transform: scale(1.1);
+        }
+
+        .social-button i {
+            vertical-align: middle;
+        }
+
+        .content {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            animation: slide-in 0.5s ease;
+        }
+
+        .project-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .project-button {
+            padding: 10px;
+            font-size: 1.2rem;
+            background: #2a5298;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .project-button:hover {
+            background: #1e3c72;
+        }
+
+        .project-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .project-content p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @keyframes pop-in {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>From Ideas to Execution</header>
+
+    <div class="profile">
+        <div class="profile-pic">
+            <img src="https://i.postimg.cc/FFg1jbmM/a.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h1>Samhita Prashanth</h1>
+            <h2>Designs That Speak, Code That Works</h2>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="button" onclick="showContent('about')">About Me</button>
+        <button class="button" onclick="showContent('portfolio')">Portfolio</button>
+        <button class="button" onclick="showContent('resume')">Resume</button>
+        <button class="button" onclick="showContent('contact')">Contact Me</button>
+        <button class="button" onclick="showContent('certifications')">Certifications</button>
+        <button class="button" onclick="showContent('skills')">Skills</button>
+    </div>
+
+    <div id="about" class="content">
+        Hello! I’m Samhita, a frontend developer with a deep passion for technology, creativity, and continuous learning. Currently pursuing my Computer Science and Engineering degree at KSIT, Bangalore, I specialize in frontend development, using technologies like HTML, CSS, JavaScript, and responsive design to create interactive, user-friendly web experiences. But my journey doesn’t stop at code—I’m someone who believes in blending creativity with technology to build meaningful digital experiences.<br><br>
+
+My academic path has given me the opportunity to work on projects that push my skills to the limit, including Native Aura—a platform dedicated to showcasing the rich tribal culture of Karnataka, and HelpNow, a virtual first aid room designed to provide quick medical assistance in emergencies. These experiences have helped me sharpen my abilities in UI/UX design, multimedia integration, and JavaScript development, and have fueled my drive to create visually engaging and functional digital solutions.<br><br>
+
+Beyond coding, I have a wide range of interests that contribute to my creativity and personal growth. I’m passionate about the arts—whether it’s dancing or acting, I love expressing myself through performance. As a dancer, I have had the privilege of performing in traditional and contemporary styles, which has shaped my appreciation for movement and storytelling. I also enjoy acting, which has helped me develop strong communication and teamwork skills. Additionally, I’m actively involved in sports, which keeps me grounded, teaches me discipline, and helps me maintain a balanced, focused approach to both work and life.<br><br>
+
+I believe that the intersection of technology and art is where magic happens. My goal is to continue blending my technical expertise with my creative interests, whether it’s through developing innovative websites or incorporating dynamic, interactive elements into my designs. I’m always eager to learn new technologies, explore creative challenges, and collaborate on projects that allow me to grow as both a developer and an individual.<br><br>
+
+If you're looking for someone who can create digital experiences that stand out and bring a unique perspective, let’s connect! I’d love to work on exciting projects that challenge my skills and spark my creativity.<br><br>
+    </div>
+
+    <div id="portfolio" class="content">
+        <h2>My Projects</h2>
+        <div class="project-buttons">
+            <button class="project-button" onclick="toggleProjectDetails('project1')">Native Aura</button>
+            <button class="project-button" onclick="toggleProjectDetails('project2')">HelpNow</button>
+        </div>
+
+        <div id="project1" class="project-content">
+            <h3>Native Aura</h3>
+            <p style="text-align: left;">Description: Native Aura is a platform dedicated to celebrating and preserving the rich tribal cultures of Karnataka. By showcasing the history, traditions, crafts, and stories of various tribes, it aims to raise awareness and promote the unique cultural identity of these communities.</p><br>
+
+<p style="text-align: left;">Key Features:</p>
+<ul style="text-align: left;">
+  <li> Detailed profiles of tribal communities with information on their history, crafts, festivals, and traditions.</li>
+  <li> Embedded videos showcasing tribal dance forms, rituals, and cultural performances.</li>
+  <li> E-commerce functionality to purchase specialized tribal products like honey, crafts, jewelry, and textiles.</li>
+  <li> Engaging multimedia content, such as images and videos, for an immersive experience of tribal art and culture.</li>
+</ul><br>
+
+<p style="text-align: left;">Tribal Communities Featured:</p>
+<ul style="text-align: left;">
+  <li> Tribe Names: Soliga, Jenukuruba, Lambani, Hakki-Pikki, Siddhi, Kadu Kuruba, etc.</li>
+  <li> Detailed Information: Short descriptions about each tribe's cultural identity, crafts, and history.</li>
+  <li> Images & Videos: High-quality images and videos highlighting traditional dance, attire, and crafts of the tribes.</li>
+</ul><br>
+
+<p style="text-align: left;">Interactive Features:</p>
+<ul style="text-align: left;">
+  <li> Tribal Artifact Marketplace: Links to purchase traditional items such as handmade jewelry, textiles, pottery, and tribal honey directly from the platform.</li>
+  <li> Watch Traditional Dance: Access to videos of traditional dances and cultural performances from Karnataka’s tribes.</li>
+  <li> Event Highlights: Information about major tribal festivals, community events, and cultural performances.</li>
+  <li> User Testimonials: Display feedback from users who have explored tribal culture or bought items from the platform.</li>
+</ul><br>
+
+<p style="text-align: left;">Multimedia Content:</p>
+<ul style="text-align: left;">
+  <li> Documentary Videos: Videos and documentaries that provide a deeper understanding of tribal life, traditions, and crafts.</li>
+  <li> Dance Performances: A gallery of traditional dance forms, showing how dance plays an important role in tribal culture.</li>
+</ul><br>
+
+<p style="text-align: left;">Call to Action:</p>
+<ul style="text-align: left;">
+  <li> Explore Tribes: Leads to the section where users can learn more about each featured tribe.</li>
+  <li> Shop Traditional Products: Directs users to the e-commerce page where they can purchase authentic tribal items.</li>
+  <li> Watch Traditional Dance: Takes users to the video gallery of tribal dance performances.</li>
+</ul><br>
+
+<p style="text-align: left;">Collaborative Opportunities:</p>
+<ul style="text-align: left;">
+  <li> Collaborate: Information for artisans or cultural organizations interested in partnering with the platform to showcase their work.</li>
+  <li> Volunteer: Opportunities to get involved in preserving and promoting tribal culture through the platform.</li>
+</ul><br>
+
+<p style="text-align: left;">Social Media Integration:</p>
+<ul style="text-align: left;">
+  <li> Follow Us: Social media links where users can stay updated with the latest news, cultural highlights, and product updates related to Karnataka’s tribes.</li>
+</ul>
+
+        </div>
+
+        <div id="project2" class="project-content">
+            <h3>HelpNow</h3>
+           <p style="text-align: left;">Description: HelpNow is a virtual first aid room providing immediate guidance and assistance in emergencies. It helps individuals access first aid tips and instructions for various medical situations, empowering users to act confidently during emergencies.</p><br>
+
+<p style="text-align: left;">Key Features:</p>
+<ul style="text-align: left;">
+  <li> Step-by-step first aid instructions for various emergencies, including choking, bleeding, burns, fractures, etc.</li>
+  <li> Video tutorials and images demonstrating first aid techniques for clear understanding.</li>
+  <li> Integration with emergency services for quick access to medical help.</li>
+  <li> User-friendly interface with easy navigation for both experienced and non-experienced users.</li>
+</ul><br>
+
+<p style="text-align: left;">Medical Situations Covered:</p>
+<ul style="text-align: left;">
+  <li> Choking: Instructions on how to perform the Heimlich maneuver and clear an airway obstruction.</li>
+  <li> Bleeding: Steps to control bleeding and perform wound dressing.</li>
+  <li> Burns: First aid for treating burns of different severity levels.</li>
+  <li> Fractures: How to immobilize fractures and prevent further injury.</li>
+</ul><br>
+
+<p style="text-align: left;">Interactive Features:</p>
+<ul style="text-align: left;">
+  <li> Quick Access: Direct links to emergency numbers for fast help.</li>
+  <li> Video Demonstrations: Embedded video tutorials for hands-on guidance.</li>
+  <li> First Aid Kit Checklist: A list of essential items to keep in a first aid kit.</li>
+  <li> Emergency Alerts: Push notifications for important health tips and reminders for specific conditions.</li>
+</ul><br>
+
+<p style="text-align: left;">Multimedia Content:</p>
+<ul style="text-align: left;">
+  <li> Video Tutorials: Demonstrations of first aid techniques for various medical conditions.</li>
+  <li> Infographics: Simple, easy-to-follow infographics for quick reference during emergencies.</li>
+</ul><br>
+
+<p style="text-align: left;">Call to Action:</p>
+<ul style="text-align: left;">
+  <li> Get First Aid Help: Leads to the interactive first aid guide for various emergencies.</li>
+  <li> Contact Emergency Services: Direct link to call emergency services based on your location.</li>
+  <li> Learn More: Access to detailed resources and articles on health and safety.</li>
+</ul><br>
+
+<p style="text-align: left;">Collaborative Opportunities:</p>
+<ul style="text-align: left;">
+  <li> Partner with Us: Information for healthcare professionals and organizations interested in contributing to the platform.</li>
+  <li> Volunteer: Opportunities for volunteers to assist in creating educational content for the platform.</li>
+</ul><br>
+
+<p style="text-align: left;">Social Media Integration:</p>
+<ul style="text-align: left;">
+  <li> Follow Us: Social media links for updates, first aid tips, and health-related news.</li>
+</ul>
+
+        </div>
+    </div>
+
+    <div id="resume" class="content">
+    <button id="resumeBtn" onclick="openResume()">View Resume</button>
+</div>
+
+<script>
+    // Function to open the PDF file
+    function openResume() {
+        const pdfURL = ""; // Replace with your PDF file path or URL
+        window.open(pdfURL, '_blank'); // Opens the PDF in a new tab
+    }
+</script>
+
+  <div id="contact" class="content">
+    <h2>Contact Me</h2>
+    <div id="contactInfo" style="margin-top: 10px;">
+        <p>📧 Email: samhita2004sam@gmail.com</p>
+        <p>🌐 LinkedIn: <a href="https://linkedin.com/in/samhita-prashanth-153437287" target="_blank">Visit My LinkedIn</a></p>
+    </div>
+</div>
+
+
+
+   <div id="certifications" class="content">
+    <button id="certificationsBtn" onclick="openCertifications()">View Certifications</button>
+</div>
+
+<script>
+    function openCertifications() {
+        // Replace the URL below with your actual Google Drive shareable link
+        const pdfURL = ""; // Replace with your PDF file path or URL
+        window.open(pdfURL, "_blank"); // Opens the PDF in a new tab
+    }
+</script>
+
+<div id="skills" class="content">
+  <h2 style="text-align: left;">Skills</h2>
+
+  <!-- Technical Skills Section -->
+  <div class="skills-category">
+    <h3 style="text-align: left;">Technical Skills</h3>
+    <ul style="text-align: left;">
+      <li>Programming Languages: Python, Java, C++, JavaScript</li>
+      <li>Web Development: HTML, CSS, JavaScript, React</li>
+      <li>Database Management: MySQL, MongoDB, PostgreSQL</li>
+      <li>Version Control: Git, GitHub</li>
+      <li>Operating Systems: Linux, Windows, macOS</li>
+      <li>Cloud Computing: AWS, Google Cloud</li>
+      <li>Frameworks: Django, Node.js, Express</li>
+      <li>Mobile App Development: React Native, Flutter</li>
+    </ul>
+  </div>
+
+  <!-- Soft Skills Section -->
+  <div class="skills-category">
+    <h3 style="text-align: left;">Soft Skills</h3>
+    <ul style="text-align: left;">
+      <li>Problem-solving</li>
+      <li>Communication</li>
+      <li>Team Collaboration</li>
+      <li>Time Management</li>
+      <li>Adaptability</li>
+      <li>Leadership</li>
+    </ul>
+  </div>
+
+  <!-- Project Management Section -->
+  <div class="skills-category">
+    <h3 style="text-align: left;">Project Management</h3>
+    <ul style="text-align: left;">
+      <li>Agile Methodology</li>
+      <li>Project Planning</li>
+      <li>Risk Management</li>
+    </ul>
+  </div>
+
+  <!-- Languages Section -->
+  <div class="skills-category">
+    <h3 style="text-align: left;">Languages</h3>
+    <ul style="text-align: left;">
+      <li>English</li>
+      <li>Kannada</li>
+      <li>Hindi</li>
+    </ul>
+  </div>
+
+</div>
+
+    <div class="social-buttons">
+        <a href="https://linkedin.com/in/samhita-prashanth-153437287" target="_blank" class="social-button">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Samhita008" target="_blank" class="social-button">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        function showContent(sectionId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.style.display = 'none');
+
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.style.display = 'block';
+            }
+        }
+
+        function toggleProjectDetails(projectId) {
+            const projectContent = document.getElementById(projectId);
+            if (projectContent) {
+                projectContent.style.display = projectContent.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+    </script>
+</body>
+</html>
